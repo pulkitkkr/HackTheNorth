@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "apisauce": "^1.0.2",
+    "eslint-config-airbnb": "^18.0.1",
     "format-json": "^1.0.3",
     "identity-obj-proxy": "^3.0.0",
     "lodash": "^4.17.11",
@@ -65,6 +66,9 @@
     "babel-preset-react-native": "^4.0.1",
     "enzyme": "^3.2.0",
     "enzyme-adapter-react-16": "^1.1.0",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.0",
     "ignite-andross": "^4.1.0",
     "ignite-animatable": "1.0.2",
     "ignite-dev-screens": "2.4.5",
