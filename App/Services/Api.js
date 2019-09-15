@@ -39,9 +39,19 @@ const create = (baseURL = "https://stark-escarpment-52232.herokuapp.com") => {
     return fetch(TD_Request).then(response => response.json());
   };
 
+  const getTdTransactions = customerId => {
+    const TD_Request = new Request(
+      TD_BASE_URL + "/customers/" + customerId + "/transactions",
+      TD_INIT
+    );
+
+    return fetch(TD_Request).then(response => response.json());
+  };
+
   return {
     getCustomerSecrets,
-    getTdCustomerById
+    getTdCustomerById,
+    getTdTransactions
   };
 };
 
