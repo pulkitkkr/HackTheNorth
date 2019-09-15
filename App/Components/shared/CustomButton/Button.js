@@ -32,6 +32,7 @@ const CustomButton = ({
   theme = "primary",
   size = "MD",
   title,
+  textStyles = {},
   ...otherProps
 }) => {
   return (
@@ -59,7 +60,9 @@ const CustomButton = ({
           ...style
         }}
       >
-        <Text style={{ fontSize: 20, ...getColor(theme) }}>{title}</Text>
+        <Text style={{ fontSize: 20, ...getColor(theme), ...textStyles }}>
+          {title}
+        </Text>
       </View>
     </TouchableNativeFeedback>
   );
