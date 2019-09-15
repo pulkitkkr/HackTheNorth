@@ -4,12 +4,20 @@ import { connect } from "react-redux";
 import { SectionWithHeading } from "../../Components/shared";
 import Icon from "react-native-vector-icons/AntDesign";
 import { CustomButton } from "../../Components/shared";
-import {
-  RESET_CUSTOMER_DETAILS
-} from "../../Redux/CustomerDetailRedux";
+import { RESET_CUSTOMER_DETAILS } from "../../Redux/CustomerDetailRedux";
+
 const UserProfileScreen = props => {
-  const { givenName, age, birthDate, type, gender, relationshipStatus, totalIncome, workActivity } = props.customerDetails.userDetails;
-  console.log(props.customerDetails.userDetails)
+  const {
+    givenName,
+    age,
+    birthDate,
+    type,
+    gender,
+    relationshipStatus,
+    totalIncome,
+    workActivity
+  } = props.customerDetails.userDetails;
+
   return (
     <ScrollView>
       <View
@@ -42,7 +50,7 @@ const UserProfileScreen = props => {
               <Text style={{ fontSize: 16, flex: 1 }}>{type}</Text>
             </View>
           </View>
-          <View style={{ flexDirection: "row" , paddingBottom: 20}}>
+          <View style={{ flexDirection: "row", paddingBottom: 20 }}>
             <View style={{ flexDirection: "column", flex: 1 }}>
               <Text style={{ flex: 1, fontSize: 16, fontWeight: "600" }}>
                 Gender:
@@ -53,10 +61,12 @@ const UserProfileScreen = props => {
               <Text style={{ flex: 1, fontSize: 16, fontWeight: "600" }}>
                 Relationship Status:
               </Text>
-              <Text style={{ fontSize: 16, flex: 1 }}>{relationshipStatus}</Text>
+              <Text style={{ fontSize: 16, flex: 1 }}>
+                {relationshipStatus}
+              </Text>
             </View>
           </View>
-          <View style={{ flexDirection: "row" , paddingBottom: 20}}>
+          <View style={{ flexDirection: "row", paddingBottom: 20 }}>
             <View style={{ flexDirection: "column", flex: 1 }}>
               <Text style={{ flex: 1, fontSize: 16, fontWeight: "600" }}>
                 Total Income:
@@ -72,9 +82,9 @@ const UserProfileScreen = props => {
           </View>
         </SectionWithHeading>
         <CustomButton
-        onPress={() => {
-          props.resetState();
-          props.navigation.replace("LaunchScreen");
+          onPress={() => {
+            props.resetState();
+            props.navigation.replace("LaunchScreen");
           }}
           title={"Log Out"}
         />
@@ -84,9 +94,9 @@ const UserProfileScreen = props => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  resetState: ()=>
+  resetState: () =>
     dispatch({
-      type: RESET_CUSTOMER_DETAILS,
+      type: RESET_CUSTOMER_DETAILS
     })
 });
 

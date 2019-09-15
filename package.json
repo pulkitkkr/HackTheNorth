@@ -24,13 +24,17 @@
     "git-hook": "npm run lint -s && npm run test -s"
   },
   "dependencies": {
+    "@blockmason/link-sdk": "^0.1.4",
+    "@xe/xecd-rates-client": "^0.1.0",
     "apisauce": "^1.0.2",
+    "crypto": "^1.0.1",
     "eslint-config-airbnb": "^18.0.1",
     "fetch": "^1.1.0",
     "format-json": "^1.0.3",
     "identity-obj-proxy": "^3.0.0",
     "jetifier": "^1.6.4",
     "lodash": "^4.17.11",
+    "node-fetch": "^2.6.0",
     "prettier": "^1.18.2",
     "prop-types": "^15.7.2",
     "querystringify": "2.1.0",

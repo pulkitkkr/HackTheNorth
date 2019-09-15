@@ -37,35 +37,39 @@ const LaunchScreen = props => {
         />
         <CustomButton
           onPress={() => {
-            Service.getCustomerSecrets(custId)
-              .then(response => {
-                const etheriumId = response.data.address;
-                const tdBankId = response.data.customer_id;
-                const userType = response.data.userType;
+            if (password.length > 5) {
+              Service.getCustomerSecrets(custId)
+                .then(response => {
+                  const etheriumId = response.data.address;
+                  const tdBankId = response.data.customer_id;
+                  const userType = response.data.userType;
 
-                if (etheriumId && tdBankId) {
-                  Service.getTdCustomerById(tdBankId).then(response => {
-                    if (response.statusCode == 200) {
-                      props.setCustomerDetails(response.result);
-                      props.setCustomerWalletDetails(
-                        etheriumId,
-                        tdBankId,
-                        userType
-                      );
-                      props.navigation.replace("HomeScreen");
-                    } else {
-                      alert(
-                        "An unexpected error occurred while get details from TD "
-                      );
-                    }
-                  });
-                } else {
-                  alert("The Customer Id is not correct");
-                }
-              })
-              .catch(e => {
-                console.log("Error While getting secrets", e);
-              });
+                  if (etheriumId && tdBankId) {
+                    Service.getTdCustomerById(tdBankId).then(response => {
+                      if (response.statusCode == 200) {
+                        props.setCustomerDetails(response.result);
+                        props.setCustomerWalletDetails(
+                          etheriumId,
+                          tdBankId,
+                          userType
+                        );
+                        props.navigation.replace("HomeScreen");
+                      } else {
+                        alert(
+                          "An unexpected error occurred while get details from TD "
+                        );
+                      }
+                    });
+                  } else {
+                    alert("The Customer Id is not correct");
+                  }
+                })
+                .catch(e => {
+                  console.log("Error While getting secrets", e);
+                });
+            } else {
+              alert("Password is incorrect ");
+            }
           }}
           title={"Sign In"}
         />

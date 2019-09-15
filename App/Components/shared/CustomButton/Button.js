@@ -18,12 +18,18 @@ const getColorObj = (color, backgroundColor) => ({
   backgroundColor,
   color
 });
-const getColor = theme => {
+const getColor = (theme, disabled = false) => {
   switch (theme) {
     case "primary":
-      return getColorObj("#fff", "#00B624");
+      return getColorObj(
+        disabled ? "#000" : "#fff",
+        disabled ? "#ebebeb" : "#00B624"
+      );
     default:
-      return getColorObj("#fff", "#00B624");
+      return getColorObj(
+        disabled ? "#000" : "#fff",
+        disabled ? "#ebebeb" : "#00B624"
+      );
   }
 };
 
@@ -33,6 +39,7 @@ const CustomButton = ({
   size = "MD",
   title,
   textStyles = {},
+  disabled,
   ...otherProps
 }) => {
   return (
@@ -54,13 +61,15 @@ const CustomButton = ({
           fontSize: 20,
           paddingLeft: 15,
           paddingRight: 15,
-          ...getColor(theme),
+          ...getColor(theme, disabled),
           alignItems: "center",
           justifyContent: "center",
           ...style
         }}
       >
-        <Text style={{ fontSize: 20, ...getColor(theme), ...textStyles }}>
+        <Text
+          style={{ fontSize: 20, ...getColor(theme, disabled), ...textStyles }}
+        >
           {title}
         </Text>
       </View>
