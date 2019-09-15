@@ -2,7 +2,6 @@ import React from "react";
 import { ScrollView, Text } from "react-native";
 import { TextHero } from "../../Components/shared";
 import { connect } from "react-redux";
-import StartupActions from "../../Redux/StartupRedux";
 
 const HomeScreen = props => {
   console.log(props);
@@ -10,7 +9,7 @@ const HomeScreen = props => {
   return (
     <ScrollView>
       <TextHero
-        title={"Welcome Username"}
+        title={`Welcome ${props.customerDetails.userDetails.givenName}`}
         subtitle={"Explore TD Canada Trust products and services"}
       />
     </ScrollView>

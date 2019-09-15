@@ -11,10 +11,6 @@ export const INITIAL_STATE = {
   userDetails: null
 };
 
-export const walletDetailSelector = {
-  wallets: state => state.wallets
-};
-
 export const addCustomerDetail = (state, payload) => ({
   ...state,
   userDetails: payload

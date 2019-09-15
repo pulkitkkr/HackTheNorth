@@ -6,7 +6,7 @@ import {
 } from "react-navigation";
 import LaunchScreen from "../Containers/LaunchScreen/LaunchScreen";
 import HomeScreen from "../Containers/HomeScreen/HomeScreen";
-
+import UserProfileScreen from "../Containers/UserProfileScreen/UserProfileScreen";
 import { View, Text } from "react-native";
 
 import styles from "./Styles/NavigationStyles";
@@ -19,7 +19,8 @@ const GenerateScreen = ({ text }) => (
 
 const TabNavigation = createBottomTabNavigator({
   Home: HomeScreen,
-  Second: props => <GenerateScreen text={"Second"} />
+  Second: props => <GenerateScreen text={"Second"} />,
+  UserProfile: UserProfileScreen
 });
 
 // Manifest of possible screens
