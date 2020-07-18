@@ -33,7 +33,7 @@
     "format-json": "^1.0.3",
     "identity-obj-proxy": "^3.0.0",
     "jetifier": "^1.6.4",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.19",
     "node-fetch": "^2.6.0",
     "prettier": "^1.18.2",
     "prop-types": "^15.7.2",
